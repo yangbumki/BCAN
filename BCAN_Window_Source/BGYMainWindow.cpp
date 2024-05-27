@@ -344,7 +344,11 @@ bool BGYMainWindow::GetExeIInfo() {
 	
 RECLICKED:
 	openExelPopup->selectedFiles().clear();
-	openExelPopup->setNameFilter(tr("Exel (*.xlsx)"));
+	QStringList* filterList = new QStringList;
+	filterList->push_front(tr("Exel (*.xlsx)"));
+	filterList->push_front(tr("All(*.*)"));
+	openExelPopup->setNameFilters(*filterList);
+	delete(filterList);
 	if (openExelPopup->exec() == QDialog::Rejected) {
 		return true;
 	}

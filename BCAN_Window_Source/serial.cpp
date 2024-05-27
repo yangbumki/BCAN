@@ -375,6 +375,9 @@ bool Serial::GetCanDevices(QVector<CommonDeviceList>* lists) {
 	return true;
 };
 bool Serial::GetCanConStatus() {
+#if DEBUGGING
+		return true;
+#endif
 	return can->IsConnected();
 }
 bool Serial::CanDisconnect() {

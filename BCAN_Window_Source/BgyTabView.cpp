@@ -1177,6 +1177,7 @@ bool BgyTabView::CanBtnEvent() {
 				//data-byte calc
 				QString* addData = new QString;
 				for (int dataAry = 0; dataAry < DATA_BYTE; dataAry++) {
+					auto test = QString::number(canBtnHeaders[btnAry]->data[dataAry], 16);
 					addData->append(QString::number(canBtnHeaders[btnAry]->data[dataAry], 16));
 					addData->append(" ");
 				}
@@ -1203,7 +1204,7 @@ bool BgyTabView::CanBtnEvent() {
 				delete(tmpMsg);*/
 			}
 		}
-		else {
+		else if(canBtns[btnAry]->hasFocus()){
 			int rowMax = writeTableWidget->rowCount();
 			/*if (rowMax == 0) return true;*/
 

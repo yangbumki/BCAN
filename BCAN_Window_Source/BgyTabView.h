@@ -50,9 +50,9 @@ typedef enum CAN_DATA_HEADER_LIST {
 
 typedef struct CAN_BTNS_HEADER {
 	wchar_t name[MAX_NAME] = {0, };
-	int id;
-	int dlc;
-	char data[DATA_BYTE];
+	unsigned int id;
+	unsigned int dlc;
+	unsigned char data[DATA_BYTE];
 } canBtnsHeader;
 
 const QStringList canDataHeaders = { "ID", "DLC", "DATA" };
@@ -64,6 +64,7 @@ class BgyTabView : public QTabWidget
 
 private:
 	BGY_CAN* bCan						= nullptr;
+	BOOL canStatus						= FALSE;
 	BGY_EXEL* bExel						= nullptr;
 	QMessageBox* preMsgBox				= nullptr;
 	QTimer updateTimer;
