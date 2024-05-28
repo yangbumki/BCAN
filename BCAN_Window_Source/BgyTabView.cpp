@@ -176,10 +176,13 @@ bool BgyTabView::SetQuickViewComponent() {
 	if (!InitializeVariable(&quickMainLayout)) return false;
 	if (!InitializeVariable(&quickLeftWidget)) return false;
 	if (!InitializeVariable(&quickRigthtWidget)) return false;
+	if (!InitializeVariable(&quickLeftScrollWidget)) return false;
 
 	if (!SetQucikTraceView()) return false;
 
-	quickMainSplitView->addWidget(quickLeftWidget);
+	quickLeftScrollWidget->setWidgetResizable(true);
+
+	quickMainSplitView->addWidget(quickLeftScrollWidget);
 	quickMainSplitView->addWidget(quickRigthtWidget);
 
 	quickMainLayout->addWidget(quickMainSplitView);
@@ -511,6 +514,8 @@ bool BgyTabView::SetCanBtnsView() {
 	}
 
 	quickLeftWidget->setLayout(quickBtnsLayout);
+	quickLeftScrollWidget->setWidget(quickLeftWidget);
+	
 
 	return true;
 }
@@ -860,7 +865,7 @@ bool BgyTabView::UpdateWriteViewData() {
 	}
 
 //DATA Å½»ö
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size; ) {
 		if (i + 1 >=  size) break;
 		if (writeTmpMsg[i].id == writeTmpMsg[i + 1].id) {
 			for (int j = 0; j < DATA_BYTE; j++) {
@@ -870,7 +875,9 @@ bool BgyTabView::UpdateWriteViewData() {
 			}
 			writeTmpMsg.remove(i);
 			size = writeTmpMsg.size();
+			continue;
 		}
+		i++;
 	}
 
 RESEND:

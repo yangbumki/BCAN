@@ -276,7 +276,7 @@ DWORD WINAPI Serial::GetCanTrace(void* arg) {
 	return 0;
 #else
 	while (serial->traceThreadEnable) {
-		Sleep(1); //CPU »ç¿ë·ü Á¶Á¤
+		Sleep(10); //CPU »ç¿ë·ü Á¶Á¤
 
 		if (serial->traceThreadStatus == FALSE) {
 		if (WaitForSingleObject(serial->GetTraceThreadMtx(), INFINITE))

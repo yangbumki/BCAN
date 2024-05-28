@@ -15,6 +15,7 @@
 #include <qdialog.h>
 #include <qlabel.h>
 #include <qlineedit.h>
+#include <qscrollarea.h>
 
 #include <qmessagebox.h>
 
@@ -36,7 +37,7 @@
 #define HEX						16
 #define MAX_L_EDIT_ID			3
 #define MAX_L_EDIT_DATA			2
-#define EXEL_MAX				20
+#define EXEL_MAX				100
 #define MAX_NAME				100
 #define EXEL_ROW_OFFSET			1
 #define EXEL_COL_OFFSET			1 
@@ -120,6 +121,7 @@ private:
 	QHBoxLayout* quickMainLayout			= nullptr;
 	QSplitter* quickMainSplitView			= nullptr;
 	QWidget* quickLeftWidget				= nullptr;
+	QScrollArea* quickLeftScrollWidget		= nullptr;
 	QLayout* quickBtnsLayout				= nullptr;
 	QWidget* quickRigthtWidget				= nullptr;
 	QTableWidget* quickTraceTableWidget		= nullptr;

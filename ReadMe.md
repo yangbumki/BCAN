@@ -3,7 +3,7 @@
 * date : 2024-05-10 ~ 2024-05-24
 
 ### Main Frame
-![alt text](image-1.png)
+![alt text](BCAN_IMG1.png)
 #### ToolBar Function
 * Connect : Device Connect
 * DisConnect : Device DisConnect
@@ -14,8 +14,8 @@
 * Stop : Stop
 * Load_Exel : Load Exel
 #### TAB-View
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](BCAN_IMG3.png)
+![alt text](BCAN_IMG4.png)
 * Default-View
   *  Read Layout : Sorted Rx Data Window
   *  Write Layout : Add Tx Data Window
@@ -25,8 +25,8 @@
   * Trace Layout : Rx-Data & Tx-Data
   
 ### Debugging Mode
-![alt text](image-5.png)  
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](BCAN_IMG5.png)  
+![alt text](BCAN_IMG6.png)
+![alt text](BCAN_IMG7.png)
 Change Debugging in Common.h (1 or 0)
 
